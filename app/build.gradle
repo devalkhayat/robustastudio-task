@@ -76,7 +76,7 @@ dependencies {
 
     //test
     testImplementation juintDependencies.core
-    testImplementation 'com.google.truth:truth:1.1.2'
+    testImplementation googleTruthDependencies.core
 
     androidTestImplementation testDependencies.core
     androidTestImplementation espressoDependencies.core
