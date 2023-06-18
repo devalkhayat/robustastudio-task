@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">Photo Weather</string>
+    <string name="enter_place_name">Write your place</string>
+    <string name="choose_city">Choose City</string>
+    <string name="btnShowDataTitle">Show the card</string>
+    <string name="btnSave">Share</string>
+    <string name="error_message_invalid_data">fill all required information</string>
+    <string name="error_message_invalid_photo">take a photo</string>
+    <string name="show_large">Show Large version</string>
+    <array name="cities">
+        <item>Alexandria</item>
+        <item>Cairo</item>
+        <item>Sharm El-Sheikh</item>
+    </array>
+</resources>

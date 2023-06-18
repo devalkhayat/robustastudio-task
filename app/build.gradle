@@ -1,0 +1,83 @@
+plugins {
+    id 'com.android.application'
+    id 'org.jetbrains.kotlin.android'
+    id 'androidx.navigation.safeargs.kotlin'
+
+
+}
+
+apply from: '../dependencies.gradle'
+android {
+    namespace 'com.photoweather.app'
+    compileSdk 33
+
+    defaultConfig {
+        applicationId "com.photoweather.app"
+        minSdk 24
+        targetSdk 33
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+    buildFeatures {
+        viewBinding true
+        dataBinding true
+    }
+}
+
+dependencies {
+
+    implementation kotlinDependencies.core
+    implementation androidxDependencies.core
+    implementation materialDependencies.core
+    implementation constraintDependencies.core
+    //
+    implementation retrofitDependencies.retrofit
+    implementation retrofitDependencies.gson
+    implementation retrofitDependencies.scalar
+    //
+    implementation httpOkDependencies.httpOK
+    //lifeCycle
+    implementation lifecycleDependencies.viewModel
+    implementation lifecycleDependencies.liveData
+    //glide
+    implementation glideDependencies.glide
+    implementation glideDependencies.annotation
+    //navigation
+    implementation koinDependencies.javaCompat
+    implementation koinDependencies.workManager
+    implementation koinDependencies.navGraph
+    //room
+    implementation roomDependencies.kotlin
+    implementation roomDependencies.paging
+    //paging
+    implementation pagingDependencies.core
+
+    //local modules
+    implementation project(path: ':domain')
+    implementation project(path: ':data')
+    implementation project(path: ':resources')
+
+
+    //test
+    testImplementation juintDependencies.core
+    testImplementation 'com.google.truth:truth:1.1.2'
+
+    androidTestImplementation testDependencies.core
+    androidTestImplementation espressoDependencies.core
+}

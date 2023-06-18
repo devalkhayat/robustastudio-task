@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/app_nav"
+    app:startDestination="@id/homeFragment">
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.photoweather.app.features.home.fragments.HomeFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_homeFragment_to_formFragment"
+            app:destination="@id/formFragment"
+            app:enterAnim="@android:anim/slide_in_left"
+            app:exitAnim="@android:anim/slide_out_right" />
+        <action
+            android:id="@+id/action_homeFragment_to_previewFragment"
+            app:destination="@id/previewFragment"
+            app:enterAnim="@android:anim/fade_in"
+            app:exitAnim="@android:anim/fade_out" />
+    </fragment>
+    <dialog
+        android:id="@+id/citiesFragment"
+        android:name="com.photoweather.app.features.addPost.fragments.CitiesFragment"
+        android:label="CitiesFragment" >
+        <argument
+            android:name="onCityClickListener"
+            app:argType="com.photoweather.app.util.eventListners.RecycleViewEventListener" />
+    </dialog>
+    <fragment
+        android:id="@+id/formFragment"
+        android:name="com.photoweather.app.features.addPost.fragments.FormFragment"
+        android:label="fragment_form"
+        tools:layout="@layout/fragment_form" >
+
+        <action
+            android:id="@+id/action_formFragment_to_citiesFragment"
+            app:destination="@id/citiesFragment" />
+        <action
+            android:id="@+id/action_formFragment_to_cardFragment"
+            app:destination="@id/cardFragment"
+            app:enterAnim="@android:anim/fade_in"
+            app:exitAnim="@android:anim/fade_out" />
+    </fragment>
+    <fragment
+        android:id="@+id/cardFragment"
+        android:name="com.photoweather.app.features.addPost.fragments.CardFragment"
+        android:label="fragment_card"
+        tools:layout="@layout/fragment_card" >
+        <argument
+            android:name="cardInfo"
+            app:argType="com.photoweather.app.util.models.Card" />
+    </fragment>
+    <fragment
+        android:id="@+id/previewFragment"
+        android:name="com.photoweather.app.features.home.fragments.PreviewFragment"
+        android:label="fragment_preview"
+        tools:layout="@layout/fragment_preview" >
+        <argument
+            android:name="post"
+            app:argType="com.photoweather.domain.common.entites.PostsEntity" />
+    </fragment>
+</navigation>
