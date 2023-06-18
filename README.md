@@ -15,4 +15,8 @@ This is assignment task source code for RobustaStudios Co.
 ### 7-Retrofit
 ### 8-Use Case
 ## Sample:
+https://github.com/devalkhayat/robustastudio-task/assets/46660096/074a2642-184c-4b14-9af6-6d87936b2449
+
+
+
 
